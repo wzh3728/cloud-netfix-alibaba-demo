@@ -1,0 +1,15 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloudalibaba-nacos-consumer-feign-order80
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置Nacos地址
+ribbon:
+  ReadTimeout: 5000 #建立连接后读取资源的超时时间
+  ConnectTimeout: 5000 #消费者与提供者建立连接超时间
+logging:
+  level:
+    com.hdxy.wzh.service.PaymentService: debug #声明使用日志级别的接口全类名

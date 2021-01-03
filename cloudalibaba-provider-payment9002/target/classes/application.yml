@@ -1,0 +1,28 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: alibaba-payment-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置Nacos地址
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3307/clouddb?useSSL=false&serverTimezone=UTC
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.hdxy.pay.pojo
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
